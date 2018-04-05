@@ -1,4 +1,4 @@
-def call(Map config) {
+def execute(Map config) {
 	echo "${config.projectName}"
 	stage ('Cleanorkspace'){
             // Clean workspace before doing anything
