@@ -12,17 +12,17 @@ def call(body) {
             try {
                 stage ('Clone') {
                     //checkout scm
-                     bat "echo scm checkout"
+                     sh "echo scm checkout"
                     
                 }
                 stage ('Build') {
-                    bat "echo 'building ${config.projectName} ...'"
+                    sh "echo 'building ${config.projectName} ...'"
                 }
                 stage ('Tests') {
-					bat "echo testing"
+					sh "echo testing"
                 }
                 stage ('Deploy') {
-                    bat "echo 'deploying to server ${config.serverDomain}...'"
+                    sh "echo 'deploying to server ${config.serverDomain}...'"
                 }
             } catch (err) {
                 currentBuild.result = 'FAILED'
